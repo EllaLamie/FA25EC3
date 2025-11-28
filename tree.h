@@ -78,13 +78,84 @@ public:
         if (!root) {
             return nullptr;
         }
+        vector<Node<T>*> stack;
+        vector<Node<T>*> visited;
+        stack.push_back(root);
+
+        while (!stack.empty()) {
+            Node<T>* cur = stack.back();
+            stack.pop_back();
+
+            if (cur->id == id) {
+                return cur;
+            }
+            for (Node<T>* child : cur-> children) {
+                stack.push_back(child);
+            }
+        }
+        return nullptr;
     };
     // TODO: Use DFS or BFS to search tree
 
-    void printAll();
+    void printAll() {
+        if (!root) {
+            return;
+        }
+        vector<Node<T>*> stack;
+        vector<Node<T>*> alreadyVisitedList;
+        stack.push_back(root);
+
+        while (!stack.empty()) {
+            Node<T>* cur = stack.back();
+            stack.pop_back();
+
+            bool wasVisited = false;
+            for (Node<T>* v : alreadyVisitedList) {
+                if (v == cur) {
+                    wasVisited = true;
+                    break;
+                }
+            }
+            if (wasVisited) continue;
+
+            alreadyVisitedList.push_back(cur);
+            cout << cur << endl;
+            for (Node<T>* child : cur->children) {
+                stack.push_back(child);
+            }
+        }
+    };
     // TODO: Print entire structure in readable form
 
-    ~Tree();
+    ~Tree() {
+        if (!root) {
+            return;
+        }
+
+        vector<Node<T>*> stack;
+        vector<Node<T>*> visited;
+        stack.push_back(root);
+        while (!stack.empty()) {
+            Node<T>* cur = stack.back();
+            stack.pop_back();
+            bool wasVisited = false;
+            for (Node<T>* v : visited) {
+                if (v == cur) {
+                    wasVisited = true;
+                    break;
+                }
+            }
+            if (wasVisited) continue;
+            visited.push_back(cur);
+            for (Node<T>* child : cur->children) {
+                stack.push_back(child);
+            }
+        }
+        for (Node<T>* n : visited) {
+            delete n;
+        }
+        root = nullptr;
+    };
     // TODO: Free all allocated memory
 };
 
