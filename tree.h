@@ -119,13 +119,42 @@ public:
             if (wasVisited) continue;
 
             alreadyVisitedList.push_back(cur);
-            cout << cur << endl;
+            cout << cur->data << endl;
             for (Node<T>* child : cur->children) {
                 stack.push_back(child);
             }
         }
     };
     // TODO: Print entire structure in readable form
+
+    void playGame() {
+        if (!root) {
+            return;
+        }
+        Node<T>* cur = root;
+        while (true) {
+            cout << cur->data << endl;
+            if (cur->children.empty()) {
+                cout << "No more paths" << endl;
+                break;
+            }
+            cout << "Choices below:" << endl;
+            for (int i = 0; i < cur->children.size(); i++) {
+                cout << i+1 << ": " << cur->children[i]->data<<endl;
+            }
+            cout << "Enter choice: " << endl;
+            int choice;
+            cin >> choice;
+
+            if (choice < 1 || choice > cur->children.size()) {
+                cout << "Invalid  choice. Try again." << endl;
+                continue;
+            }
+
+            cur = cur->children[choice - 1];
+        }
+        cout << "Game has ended. Goodbye." << endl;
+    }
 
     ~Tree() {
         if (!root) {
