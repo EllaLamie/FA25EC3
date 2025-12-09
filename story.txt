@@ -1,0 +1,3 @@
+[1] TEXT: You find yourself at a crossroads in a dark forest. To the left, a narrow path leads toward a faint glowing light. To the right, the trail descends into a shadowy valley. Which way do you choose? NEXT: 2, 3  
+[2] TEXT: You follow the glowing light to discover a small, enchanted village filled with friendly folk who offer you shelter. Do you stay the night or continue your journey? NEXT: 4, 5  
+[3] TEXT: You descend into the shadowy valley, where eerie sounds surround you. Suddenly, you spot a mysterious cave entrance. Do you enter the cave, or retreat back to the crossroads? NEXT: 6, 1

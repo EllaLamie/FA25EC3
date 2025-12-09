@@ -66,6 +66,11 @@ so I added an extra check in playGame by using a vector called visited and addin
 December 6, 2025:
 Created the developer log and am finalizing comments and doing some extra testing. Then I will make my final commit.
 
+December 7, 2025:
+Tried to figure out where to put the story.txt
+
+December 8, 2025:
+Checked everything one last time
 
 # All commits
 
@@ -99,7 +104,32 @@ Finished playGame and every TODO in main
    Wanted to commit to show that I had finished all methods and TODOs.
 
 December 6, 2025:
+Created and wrote most of the developer log
+
+   Files Modified:
+   developer_log.md
+
+   Reasoning Behind Commit:
+   Wanted to make sure the developer log development was in github
+
+December 7, 2025:
+Finished all debugging. Everything seemed to be working
+
+   Files Modified:
+   tree.h
+   main.cpp
+
    Reasoning Behind Commit:
    Had already finished all the methods and TODOs in the last commit, wanted this commit to
    represent the debugging process. Now you can see side by side the changes I had to make
    after I had finished everything.
+
+December 8, 2025:
+Added to the developer log and created the story.txt so had to commit one last time
+
+   Files Modified:
+   developer_log.md
+   story.txt
+
+   Reasoning Behind Commit:
+   Was planning on submitting so I needed to finalize everything in git hub.

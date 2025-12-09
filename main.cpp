@@ -132,7 +132,7 @@ int main() {
     // Open the file as an input file stream
     ifstream fin(filename);
 
-    // This reads the JSON into one string by using iterators from beginning to end**
+    // This reads the JSON into one string by using iterators from beginning to end
     string json((istreambuf_iterator<char>(fin)), istreambuf_iterator<char>());
 
     // Finds the part of the JSON that says "output" because my original file looked like this:
@@ -142,7 +142,7 @@ int main() {
     if (outputPos != string::npos) {
 
         // If so, the goal is to find "text" that comes after, because that is where the node will
-        // be on the original story.txt (as said before, it goes like this: "output" { "text": ..... }
+        // be on the original story.txt (as said before, it goes like this: "output" { "text": ..... })
         size_t textPos = json.find("\"text\":", outputPos);
         // Now make sure "text" exists
         if (textPos != string::npos) {
